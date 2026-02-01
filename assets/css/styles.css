@@ -331,3 +331,28 @@ body{
   .circle--2{width:132px;height:132px}
   .circle--3{width:110px;height:110px}
 }
+
+.form-embed{
+  width: 100%;
+  max-width: 980px;          
+  background: #fff;
+  border: 1px solid #d7d7d7;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.form-embed iframe{
+  width: 100%;
+  height: 78vh;              
+  min-height: 780px;         /* ensures good height on desktop */
+  border: 0;
+  display: block;
+}
+
+/* Mobile: make it a bit taller and remove “tiny” feeling */
+@media (max-width: 720px){
+  .form-embed iframe{
+    height: 84vh;
+    min-height: 820px;
+  }
+}
