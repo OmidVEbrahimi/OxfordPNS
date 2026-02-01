@@ -446,3 +446,13 @@ body{
   .circle--mid{width:132px;height:132px}
   .circle--bot{width:110px;height:110px}
 }
+
+/* FORCE hero headline sizing */
+.home .home-hero-kicker { font-size: 24px !important; }
+.home .home-hero-title  { font-size: 38px !important; }
+
+@media (max-width: 720px){
+  .home .home-hero-kicker { font-size: 20px !important; }
+  .home .home-hero-title  { font-size: 26px !important; }
+}
+
