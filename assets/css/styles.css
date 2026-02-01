@@ -168,13 +168,13 @@ body{
 .home-block-title{
   font-weight:800;
   margin:10px 0 4px;
-  font-size:14px;
+  font-size:16px;
 }
 
 .home-block-sub{
   font-weight:800;
   margin:0 0 18px;
-  font-size:12px;
+  font-size:15px;
 }
 
 /* Bottom part */
@@ -225,7 +225,7 @@ body{
   font-weight:800;
   text-decoration:none;
   border-radius:4px;
-  font-size:12px;
+  font-size:14px;
   line-height:1;
 }
 
@@ -347,12 +347,12 @@ body{
   color:var(--blue);
   font-weight:900;
   margin:4px 0 6px;
-  font-size:13px;
+  font-size:15px;
 }
 
 .form-link{
   display:inline-block;
-  font-size:14px;
+  font-size:16px;
   color:#5a2aa5;
   text-decoration:underline;
   font-weight:700;
@@ -385,7 +385,7 @@ body{
   /* Part 1 scaling */
   .home-hero-title{font-size:32px}
   .home-hero-kicker{font-size:22px}
-  .home-hero-par{font-size:14px}
+  .home-hero-par{font-size:15px}
 
   .home-lower-inner{grid-template-columns: 1fr; gap:22px}
   .home-right{min-height:auto}
@@ -399,7 +399,7 @@ body{
 
 @media (max-width: 720px){
   .top-actions{top:10px; right:10px; gap:10px}
-  .top-btn{padding:9px 12px; font-size:13px}
+  .top-btn{padding:9px 12px; font-size:14px}
 
   /* Side panels off on mobile (professional + avoids whitespace issues) */
   .home-network{display:none}
@@ -413,9 +413,9 @@ body{
   .home-hero-par{font-size:14px}
 
   /* Part 2 mobile: keep readable */
-  .home-h{font-size:13px}
-  .home-p{font-size:13px}
-  .home-ul{font-size:13px}
+  .home-h{font-size:14px}
+  .home-p{font-size:14px}
+  .home-ul{font-size:14px}
 
   .split-wrap{grid-template-columns: 1fr}
   .leftpanel{position:relative; height:auto; grid-template-rows: 240px 240px}
@@ -467,7 +467,7 @@ body{
 /* Phone version of hero subtext (black text under blue title) */
 @media (max-width: 720px){
   .home-hero-sub{
-    font-size: 16.5px;
+    font-size: 18px;
     line-height: 1.65;
     padding: 0 16px;
   }
