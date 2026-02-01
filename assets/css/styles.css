@@ -536,3 +536,105 @@ body{
   .circle-collage{ height: 560px; }
   .circle--bot{ top: 405px; } /* moved down from 360 */
 }
+
+/* =========================================
+   Phone layout + circle/text collisions
+   ========================================= */
+
+/* 1) PHONE VERSION 
+   Earlier panel-width logic affected mobile widths.
+   On phones, force the normal full-width layout and prevent weird “thin column” text.
+*/
+@media (max-width: 720px){
+  :root{ --panelW: 0px; }                 /* neutralise panel logic */
+  .home-network{ display:none !important; } /* already intended */
+
+  .home-hero-inner,
+  .home-lower-inner{
+    width: min(100% - 24px, var(--max)) !important;
+  }
+
+  /* Keep hero text centered and readable */
+  .home-hero-text{ margin-top: 14px; }
+  .home-hero-title{ word-break: normal; }
+}
+
+/* Also protect very small phones */
+@media (max-width: 420px){
+  .home-hero-inner,
+  .home-lower-inner{
+    width: min(100% - 18px, var(--max)) !important;
+  }
+}
+
+/* 2) Avoiding overlap of circular images
+   On desktop/laptop, give the right column more space and move circles closer to the right edge.
+   Also shrink circles at “laptop widths” so they cannot intrude into the text column.
+*/
+
+/* Give more space to the collage column on typical laptops */
+@media (max-width: 1200px){
+  .home-lower-inner{
+    grid-template-columns: 1.35fr .65fr;  /* more room for text, less for circles */
+    gap: 26px;
+  }
+
+  .circle-collage{ height: 560px; }
+
+  /* Smaller circles + pushed right */
+  .circle--top{ width: 200px; height: 200px; right: 0px; top: 10px; }
+  .circle--mid{ width: 270px; height: 270px; right: 30px; top: 175px; }
+  .circle--bot{ width: 215px; height: 215px; right: 0px; top: 390px; }
+}
+
+/* Even tighter laptops */
+@media (max-width: 1050px){
+  .home-lower-inner{
+    grid-template-columns: 1.45fr .55fr;
+    gap: 22px;
+  }
+
+  .circle-collage{ height: 520px; }
+
+  .circle--top{ width: 185px; height: 185px; right: 0px; top: 10px; }
+  .circle--mid{ width: 245px; height: 245px; right: 18px; top: 165px; }
+  .circle--bot{ width: 200px; height: 200px; right: 0px; top: 355px; }
+}
+
+/* Once the layout collapses to one column (your existing <=980px rule),
+   ensure circles never sit “over” text by removing the absolute collage behavior. */
+@media (max-width: 980px){
+  .home-right{ min-height: auto !important; }
+
+  /* Make the collage flow as a neat vertical stack on top of the right column area */
+  .circle-collage{
+    height: auto !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    justify-items: end !important;  /* keep them near the right side */
+    gap: 18px !important;
+    padding-top: 6px;
+  }
+
+  .circle{
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+  }
+
+  .circle--top{ width: 210px; height: 210px; }
+  .circle--mid{ width: 280px; height: 280px; }
+  .circle--bot{ width: 230px; height: 230px; }
+}
+
+/* On phones, keep the existing “row of circles” behavior but ensure no overlap */
+@media (max-width: 420px){
+  .circle-collage{
+    display:flex !important;
+    gap:12px !important;
+    justify-content:center !important;
+    align-items:center !important;
+    padding:12px 0 0 !important;
+  }
+  .circle{ position: static !important; }
+}
