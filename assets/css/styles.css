@@ -460,3 +460,22 @@ body{
     width:min(100% - 18px, var(--max));
   }
 }
+
+
+/* Make bullet lists in About/Register pages match paragraph text */
+.content ul,
+.content li{
+  font-size: 14px;
+  line-height: 1.75;
+  color: #222;
+}
+
+.content ul{
+  margin: 0 0 14px;
+  padding-left: 18px;
+}
+
+.content li{
+  margin: 4px 0;
+}
+
