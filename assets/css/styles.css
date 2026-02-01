@@ -456,3 +456,19 @@ body{
   .home .home-hero-title  { font-size: 26px !important; }
 }
 
+/* Hero subtext (black text under blue title) */
+.home-hero-sub{
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 820px;
+  margin: 0 auto 10px auto;
+}
+
+/* Phone version of hero subtext (black text under blue title) */
+@media (max-width: 720px){
+  .home-hero-sub{
+    font-size: 16.5px;
+    line-height: 1.65;
+    padding: 0 16px;
+  }
+}
