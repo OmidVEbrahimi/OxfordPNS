@@ -88,7 +88,7 @@ body{
 .home-hero-par{
   margin:0 auto 10px;
   max-width:820px;
-  font-size:16px;        /* ↓ from 16 */
+  font-size:18px;        /* ↓ from 16 */
   color:#222;
   line-height:1.6;
 }
@@ -385,7 +385,7 @@ body{
   /* Part 1 scaling */
   .home-hero-title{font-size:32px}
   .home-hero-kicker{font-size:22px}
-  .home-hero-par{font-size:15px}
+  .home-hero-par{font-size:16px}
 
   .home-lower-inner{grid-template-columns: 1fr; gap:22px}
   .home-right{min-height:auto}
