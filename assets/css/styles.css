@@ -472,3 +472,67 @@ body{
     padding: 0 16px;
   }
 }
+
+/* =========================
+   Side panels should not touch text on smaller screens
+   Approach: shrink the usable content width by the panel widths.
+   ========================= */
+
+:root{
+  --panelW: 320px; /* default panel width */
+}
+
+/* Make the panels use the variable width */
+.home-network{
+  width: var(--panelW);
+  background-size: var(--panelW) auto;
+}
+
+/* Reduce the usable content width so text does not sit under panels */
+.home-hero-inner,
+.home-lower-inner{
+  width: min(
+    calc(100% - var(--panelW) - var(--panelW) - 40px),
+    var(--max)
+  );
+}
+
+/* Progressive shrink on typical laptop widths */
+@media (max-width: 1500px){
+  :root{ --panelW: 260px; }
+}
+@media (max-width: 1350px){
+  :root{ --panelW: 220px; }
+}
+@media (max-width: 1200px){
+  :root{ --panelW: 180px; }
+}
+
+/* If we later want to simply hide them earlier, uncomment here:
+@media (max-width: 1050px){
+  :root{ --panelW: 0px; }
+  .home-network{ display:none; }
+}
+*/
+
+/* Your existing 720px rule already hides panels on phones, so we keep it. */
+
+
+/* =========================
+   Bottom circle separated from the middle circle
+   Move the bottom circle further down + give the collage a bit more height.
+   ========================= */
+
+.circle-collage{
+  height: 680px; /* more room so circles stay separated */
+}
+
+.circle--bot{
+  top: 505px;  /* moved down from 440 */
+}
+
+/* Keep separation on the <=980px layout too */
+@media (max-width: 980px){
+  .circle-collage{ height: 560px; }
+  .circle--bot{ top: 405px; } /* moved down from 360 */
+}
